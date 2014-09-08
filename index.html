@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Kanye Ipsum</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="The Shakespeare, Andy Warhol, and Santa Claus of jQuery plugins.">
+        <link rel="icon" type="image/jpeg" href="img/kanye.jpg">
+        <link rel="stylesheet" type="text/css" href="node_modules/normalize.css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+    </head>
+    <body>
+        <div class="container centered">
+            <h1 class="title">Kanye Ipsum: The Demo</h1>
+            <p class="subtitle muted">Your placeholder text will never be the same again. Including this text.</p>
+            <img class="img-circle" src="img/kanye.jpg" alt="the man himself">
+            <hr>
+            <div class="centered">
+                <p class="text">This is some lame text.</p>
+                <p class="text">So lame it makes me angry.</p>
+            </div>
+            <hr>
+            <p>&copy; 2014</p>
+        </div>
+    </body>
+    <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery.kanye-ipsum.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('p.text').kanye({
+                length: 'rant'
+            });
+            
+            $('p.subtitle').kanye({
+                angry: true   
+            });
+        });
+    </script>
+</html>

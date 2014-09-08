@@ -1,0 +1,41 @@
+html {
+    position: relative;
+    min-height: 100%;
+    max-width: 100%;
+}
+
+body {
+    overflow-x: hidden;
+    background-color: #fff;
+}
+
+.container {
+    width: 80%;
+    font-family: monospace;
+    max-width: 700px;
+}
+
+.centered {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.muted {
+    color: gray;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: gray;
+    width: 80%;   
+}
+
+.text {
+    text-align: left;
+    border: 1px solid gray;
+    box-shadow: 1px 1px 2px gray;
+    margin: 30px auto;
+    padding: 30px;
+    border-radius: 5px;
+}

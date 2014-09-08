@@ -1,0 +1,40 @@
+{
+  "name": "kanye-ipsum",
+  "private": true,
+  "version": "1.0.0",
+  "author": "Ty-Lucas Kelley [tylucaskelley@gmail.com]",
+  "description": "A jQuery plugin for generating Kanye West-inspired placeholder text.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tylucaskelley/kanye-ipsum"
+  },
+  "devDependencies": {
+    "bootstrap": "^3.2.0",
+    "chai": "^1.9.1",
+    "chai-webdriver": "^0.9.3",
+    "chromedriver": "^2.10.0-1",
+    "http-server": "^0.6.1",
+    "jquery": "^2.1.1",
+    "jshint": "^2.5.5",
+    "mocha": "^1.21.4",
+    "node-http-server": "^1.6.2",
+    "normalize.css": "^3.0.1",
+    "selenium-webdriver": "^2.42.1"
+  },
+  "scripts": {
+    "prestart": "npm install",
+    "start": "http-server -a 0.0.0.0 -p 8080 -i",
+    "pretest": "npm install && ./node_modules/.bin/jshint js/",
+    "test": "./node_modules/.bin/mocha test/spec/tests.js"
+  },
+  "jshintConfig": {
+    "node": true,
+    "unused": true,
+    "undef": true,
+    "globals": {
+      "$": false,
+      "jQuery": false
+    }
+  }
+}
