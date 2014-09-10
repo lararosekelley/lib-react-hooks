@@ -23,7 +23,7 @@ server.deploy(
     }
 );
 
-describe('test suite for helloWorld jQuery plugin', function() {
+describe('test suite for Kanye Ipsum jQuery plugin', function() {
     it('should go to index.html and set the window size', function() {
         driver.get('http://localhost:8000');
         driver.manage().window().setSize(480, 800);
