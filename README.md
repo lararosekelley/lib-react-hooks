@@ -14,6 +14,8 @@ All you other placeholder text generators ain't got the answers. You ain't been 
 
 I know people get mad at me when I compare myself, but that's the only way I can explain what my aspirations are. When I'm talkin' bout' Walt Disney, when I'm talkin' 'bout Howard Hughes, when I'm talkin' 'bout Henry Ford, when I'm talkin' 'bout Beethoven, when I talk about Mozart, when I talk about Shakespeare, and they all had their time on this earth. And now I have mine.
 
+![screenshot](img/kanye-ipsum.png)
+
 ###Installation
 
 To use Kanye Ipsum, you just need jQuery and the `jquery.kanye-ipsum.min.js` file. This installation process is only for those who want to see the demo:
