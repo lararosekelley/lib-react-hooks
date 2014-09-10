@@ -29,7 +29,9 @@ describe('test suite for helloWorld jQuery plugin', function() {
         driver.manage().window().setSize(480, 800);
     });
     
-    //TODO: stop being lazy and write some damn tests
+    //@TODO: Dammit Ty, stop being lazy and write some damn tests.
+    //@RESPONSE: i don't want to u can't control me
+    //@RESPONSE: it works i swear
     
     it('should close the browser', function() {
          driver.quit();

@@ -1,10 +1,10 @@
 #Kanye Ipsum
 
-**jQuery plugin for making the greatest placeholder text in the universe**
+**A jQuery plugin for adding some confidence to your placeholder text**
 
 > "Put this in the magazine: There's nothing more to be said about placeholder text. I'm the end-all, be-all of placeholder text." - Adapted from *[Details, 2009](http://www.details.com/culture-trends/cover-stars/200902/hip-hop-artist-kanye-west-talks-fashion-and-music)*
 
-Need I say more?
+*by Ty-Lucas Kelley*
 
 ---
 
@@ -16,16 +16,55 @@ I know people get mad at me when I compare myself, but that's the only way I can
 
 ###Installation
 
-1. Clone the repo: `$ git clone https://github.com/tylucaskelley/kanye-ipsum.git`
-2. Make sure you have NodeJS and NPM installed
-3. Run `$ cd kanye-ipsum`
-4. Run `$ npm install`
-5. Run `$ npm start`
-6. Go to http://localhost:8080
+To use Kanye Ipsum, you just need jQuery and the `jquery.kanye-ipsum.min.js` file. This installation process is only for those who want to see the demo:
+
+Before you can download and see the Kanye Ipsum demo, get these three things:
+
+1. [Node.js](http://nodejs.org/)
+2. [npm](http://npmjs.org)
+3. [git](http://git-scm.com/)
+
+Once that's all set, the rest of the process is painless:
+
+1. `$ git clone https://github.com/tylucaskelley/kanye-ipsum.git`
+2. `$ cd kanye-ipsum`
+3. `$ npm install`
+4. `$ npm start`
+
+Go to http://localhost:8080 to see a working demo of Kanye Ipsum!
+
+Note that `npm install` installs a ton of stuff:
+
+    node_modules/
+        bootstrap/
+        chai/
+        chai-webdriver/
+        chromedriver/
+        http-server/
+        jquery/
+        jshint/
+        mocha/
+        node-http-server/
+        normalize.css/
+        selenium-webdriver/
+
+Note that this is all for the demo app and my own testing; you don't need any of it to get Kanye quotes on your website!
 
 ###Usage
 
-Improve the lame website you're developing by 1,000,000%:
+Include jQuery and the `jquery.kanye-ipsum.min.js` file in your HTML and you'll be ready to go. Usage is pretty simple:
+
+        <p id="i-wish-i-was-kanye">
+            i lernd to kode at w3 skools
+        </p>
+        
+Let's add some of me to that `<p>` tag:
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('#i-wish-i-was-kanye').kanye();
+            });
+        </script>
 
 *Before*:
 
@@ -35,31 +74,11 @@ Improve the lame website you're developing by 1,000,000%:
 
 > I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at. So when you get something that has the name Kanye West on it, it’s supposed to be pushing the furthest possibilities. I will be the leader of a company that ends up being worth billions of dollars, because I got the answers. I understand culture. I am the nucleus.
 
-Y'all probably wondering how I do this. I'll try to explain it so y'all can understand. Take a look at some of your weak HTML:
+Note that if you call `.kanye()` on an object like `$('p')`, it will generate new placeholder text for every single `p` tag on your page.
 
-        <p id="lame">
-            i lernd to kode at w3 skools
-        </p>
-        
-Let's add some of me to that `<p>` tag:
-
-        <script type="text/javascript">
-            $(document).ready(function() {
-                $('#lame').kanye();
-            });
-        </script>
-        
-Not so lame now:
-
-    <p id="lame">
-        I want y'all to know, every time I go to the studio, every time I do an interview, every time I make a motherfuckin' t-shirt, the thing I do, I give it everything I got. And when I talk that shit, it's so that you can talk that shit. If you a fan of me, you a fan of your motherfuckin' self.
-    </p>
-    
-You can call `.kanye()` on any element that needs some better text. Use me with responsibility though. If you call me on an object like `$('p')`, I'm gonna improve the hell out of every single `p` tag on your lame page. I will be as specific with my improvements as you are; no more, no less.
-    
 ###Customization
 
-I know, I know. Take a step back. You're probably thinking, "but Kanye Ipsum, you're already perfect!". That's true, but you can still change a few things around if needed. You can pass in options like this:
+Kanye Ipsum comes with some default options that you can customize by passing in an object:
 
     $('.my-element').kanye({
         angry: true,
@@ -69,8 +88,12 @@ I know, I know. Take a step back. You're probably thinking, "but Kanye Ipsum, yo
     
 Here's a list of all of the options and their default values:
 
-* angry: [true | false] (default: false)
-* explicit: [true | false] (default: true)
-* length: ['short' | 'rant'] (default: 'short')
+* angry: [true | false] - default: false
+* explicit: [true | false] - default: true
+* length: ['short' | 'rant'] - default: 'short'
 
-And since y'all so jealous and I feel bad, I even give you access to my brilliant quotes, accessible via `$.fn.kanye.quotes`.
+That's all there is to it! Now you can go to bed happy tonight, knowing that you'll never have boring placeholder text again.
+
+###Coming Soon
+
+See TODO.md for what I have in store next.
