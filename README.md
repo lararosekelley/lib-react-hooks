@@ -8,6 +8,11 @@
 
 ---
 
+###What's new?
+
+* Minify every time server is started (9/13/2014)
+* More short quotes (9/13/2014)
+
 ###Background
 
 All you other placeholder text generators ain't got the answers. You ain't been doing the education. What's the name of your clothing line? We don't know. What we do know is that I am the number one Lorem Ipsum generator on the planet.

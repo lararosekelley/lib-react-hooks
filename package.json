@@ -20,11 +20,12 @@
     "mocha": "^1.21.4",
     "node-http-server": "^1.6.2",
     "normalize.css": "^3.0.1",
-    "selenium-webdriver": "^2.42.1"
+    "selenium-webdriver": "^2.42.1",
+    "uglify-js": "^2.4.15"
   },
   "scripts": {
     "prestart": "npm install",
-    "start": "http-server -a 0.0.0.0 -p 8080 -i",
+    "start": "./node_modules/uglify-js/bin/uglifyjs js/jquery.kanye-ipsum.js -o dist/jquery.kanye-ipsum.min.js; http-server -a 0.0.0.0 -p 8080 -i",
     "pretest": "npm install && ./node_modules/.bin/jshint js/",
     "test": "./node_modules/.bin/mocha test/spec/tests.js"
   },

@@ -6,7 +6,8 @@
             var preKanyeText = $(this);
             var opts = $.extend({}, $.fn.kanye.defaults, options);
 
-            var kanyeText = $.fn.kanye.quotes[opts.length][rand()];
+            n = opts.length === 'short' ? 18 : 10;
+            var kanyeText = $.fn.kanye.quotes[opts.length][rand(n)];
             kanyeText = opts.explicit === false ? filter(kanyeText) : kanyeText; 
             kanyeText = opts.angry === true ? kanyeText.toUpperCase() : kanyeText;
             
@@ -33,7 +34,15 @@
             "Yo Taylor, I'm really happy for you, I'll let you finish, but Beyoncé has one of the best videos of all time. One of the best videos of all time!",
             "I don't even listen to rap. My apartment is too nice to listen to rap in.",
             "I actually don't want to win anymore Grammy's because I got 10, and that's the perfect number.",
-            "Sometimes I get emotional over fonts."
+            "Sometimes I get emotional over fonts.",
+            "My music isn't just music: it's medicine.",
+            "'Everything I'm not made me everything I am.' In my humble opinion, that's a prophetic statement. Ghandi would have said something like that.",
+            "Come on now! How could you be me and want to be someone else?",
+            "When I think of competition it's like I try to create against the past. I think about Michelangelo and Picasso. You know, the pyramids.",
+            "I'm the No. 1 living and breathing rock star.",
+            "When someone comes up and says something like, 'I am a god', everybody says 'Who does he think he is??'. I just told you who I thought I was. A god.",
+            "For me to say I wasn't a genuis, I would just have to be lying to you and myself.",
+            "I'm like a vessel, and God has chosen me to be the voice and the connector."
         ],
         rant: [
             "The problem I have with the paparazzi is if they’re right in front of you and you’re like, “Can you please not take a picture of me?” And they’re like, “Dude I’m not really taking a picture,” and they just keep on doing it like they’re talking to me like I’m stupid and stuff, and then, with arm sprints, I’m going to grab the camera, that just happens, and you don’t expect that to happen with a celebrity, cause you think they’re like a museum animal and stuff, but it’s like, don’t shoot the animals, then, maybe, I don’t know.",
@@ -63,8 +72,8 @@
         return new_text;
     }
     
-    function rand() {
-        return Math.floor(Math.random() * 10);
+    function rand(n) {
+        return Math.floor(Math.random() * n);
     }
     
     function log() {

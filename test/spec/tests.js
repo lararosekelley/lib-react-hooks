@@ -29,9 +29,9 @@ describe('test suite for Kanye Ipsum jQuery plugin', function() {
         driver.manage().window().setSize(480, 800);
     });
     
-    //@TODO: Dammit Ty, stop being lazy and write some damn tests.
-    //@RESPONSE: i don't want to u can't control me
-    //@RESPONSE: it works i swear
+    //@TODO: Fill in tests
+    //@ME: i don't want to u can't control me
+    //@ME: it works i swear
     
     it('should close the browser', function() {
          driver.quit();
