@@ -1,4 +1,4 @@
-#Kanye Ipsum
+# Kanye Ipsum
 
 **A jQuery plugin for adding some confidence to your placeholder text**
 
@@ -8,12 +8,12 @@
 
 ---
 
-###What's new?
+### What's new?
 
 * Minify every time server is started (9/13/2014)
 * More short quotes (9/13/2014)
 
-###Background
+### Background
 
 All you other placeholder text generators ain't got the answers. You ain't been doing the education. What's the name of your clothing line? We don't know. What we do know is that I am the number one Lorem Ipsum generator on the planet.
 
@@ -21,7 +21,7 @@ I know people get mad at me when I compare myself, but that's the only way I can
 
 ![screenshot](img/kanye-ipsum.png)
 
-###Installation
+### Installation
 
 To use Kanye Ipsum, you just need jQuery and the `jquery.kanye-ipsum.min.js` file. This installation process is only for those who want to see the demo:
 
@@ -57,7 +57,7 @@ Note that `npm install` installs a ton of stuff:
 
 Note that this is all for the demo app and my own testing; you don't need any of it to get Kanye quotes on your website!
 
-###Usage
+### Usage
 
 Include jQuery and the `jquery.kanye-ipsum.min.js` file in your HTML and you'll be ready to go. Usage is pretty simple:
 
@@ -83,7 +83,7 @@ Let's add some of me to that `<p>` tag:
 
 Note that if you call `.kanye()` on an object like `$('p')`, it will generate new placeholder text for every single `p` tag on your page.
 
-###Customization
+### Customization
 
 Kanye Ipsum comes with some default options that you can customize by passing in an object:
 
@@ -101,6 +101,6 @@ Here's a list of all of the options and their default values:
 
 That's all there is to it! Now you can go to bed happy tonight, knowing that you'll never have boring placeholder text again.
 
-###Coming Soon
+### Coming Soon
 
 See TODO.md for what I have in store next.
