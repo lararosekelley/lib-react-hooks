@@ -1,6 +1,6 @@
 {
     "name": "kanye-ipsum",
-    "version": "1.0.3",
+    "version": "2.0.0",
     "title": "Kanye Ipsum",
     "description": "A jQuery plugin for generating placeholder text from Kanye West quotes.",
     "keywords": [
@@ -27,7 +27,7 @@
         }
     ],
     "dependencies": {
-        "jquery": ">=1.5"   
+        "jquery": ">=1.5.0"
     },
     "docs": "https://github.com/tylucaskelley/kanye-ipsum/blob/master/README.md"
 }

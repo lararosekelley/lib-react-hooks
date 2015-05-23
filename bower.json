@@ -1,0 +1,14 @@
+{
+    "name": "kanye-ipsum",
+    "version": "2.0.0",
+    "main": "dist/jquery.kanye-ipsum.min.js",
+    "ignore": [
+        ".gitignore",
+        "kanye-ipsum.jquery.json",
+        "package.json",
+        "TODO.md"
+    ],
+    "dependencies": {
+        "jquery": ">=1.5.0"
+    }
+}

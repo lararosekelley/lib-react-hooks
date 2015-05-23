@@ -10,6 +10,8 @@
 
 ### What's new?
 
+* Published on jQuery Registry, NPM, and Bower (5/23/2015)
+* Cleaned up and stripped project down to the essentials (5/23/2015)
 * Minify every time server is started (9/13/2014)
 * More short quotes (9/13/2014)
 
@@ -19,43 +21,12 @@ All you other placeholder text generators ain't got the answers. You ain't been 
 
 I know people get mad at me when I compare myself, but that's the only way I can explain what my aspirations are. When I'm talkin' bout' Walt Disney, when I'm talkin' 'bout Howard Hughes, when I'm talkin' 'bout Henry Ford, when I'm talkin' 'bout Beethoven, when I talk about Mozart, when I talk about Shakespeare, and they all had their time on this earth. And now I have mine.
 
-![screenshot](img/kanye-ipsum.png)
+![screenshot](https://raw.githubusercontent.com/tylucaskelley/kanye-ipsum/e4b624968d9bc8ab6bebfea279fe13ae39b8d1b9/img/kanye-ipsum.png)
 
 ### Installation
 
-To use Kanye Ipsum, you just need jQuery and the `jquery.kanye-ipsum.min.js` file. This installation process is only for those who want to see the demo:
-
-Before you can download and see the Kanye Ipsum demo, get these three things:
-
-1. [Node.js](http://nodejs.org/)
-2. [npm](http://npmjs.org)
-3. [git](http://git-scm.com/)
-
-Once that's all set, the rest of the process is painless:
-
-1. `$ git clone https://github.com/tylucaskelley/kanye-ipsum.git`
-2. `$ cd kanye-ipsum`
-3. `$ npm install`
-4. `$ npm start`
-
-Go to http://localhost:8080 to see a working demo of Kanye Ipsum!
-
-Note that `npm install` installs a ton of stuff:
-
-    node_modules/
-        bootstrap/
-        chai/
-        chai-webdriver/
-        chromedriver/
-        http-server/
-        jquery/
-        jshint/
-        mocha/
-        node-http-server/
-        normalize.css/
-        selenium-webdriver/
-
-Note that this is all for the demo app and my own testing; you don't need any of it to get Kanye quotes on your website!
+Simply install `kanye-ipsum` with npm or bower. Or, grab the minified file from
+the `dist` folder. All you need is jQuery (1.5+) to use it.
 
 ### Usage
 
@@ -64,7 +35,7 @@ Include jQuery and the `jquery.kanye-ipsum.min.js` file in your HTML and you'll 
         <p id="i-wish-i-was-kanye">
             i lernd to kode at w3 skools
         </p>
-        
+
 Let's add some of me to that `<p>` tag:
 
         <script type="text/javascript">
@@ -90,17 +61,13 @@ Kanye Ipsum comes with some default options that you can customize by passing in
     $('.my-element').kanye({
         angry: true,
         explicit: false,
-        length: 'rant'
+        paragraphs: 3
     });
-    
+
 Here's a list of all of the options and their default values:
 
-* angry: [true | false] - default: false
-* explicit: [true | false] - default: true
-* length: ['short' | 'rant'] - default: 'short'
+* angry: bool (default: false)
+* explicit: bool (default: true)
+* paragraphs: int (default: 1)
 
 That's all there is to it! Now you can go to bed happy tonight, knowing that you'll never have boring placeholder text again.
-
-### Coming Soon
-
-See TODO.md for what I have in store next.
