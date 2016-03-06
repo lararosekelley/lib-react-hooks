@@ -1,7 +1,61 @@
-(function($) {
-    $.fn.kanye = function(options) {
+/*!
+* Kanye Ipsum v3.0.0
+* https://github.com/tylucaskelley
+*
+* Includes jQuery
+* http://jquery.com/
+*
+* Copyright (c) 2015-2016 Ty-Lucas Kelley and other contributors
+* Released under the MIT license
+* https://raw.githubusercontent.com/tylucaskelley/kanye-ipsum/master/LICENSE
+*
+* Date: {timestamp}
+*/
+(($) => {
+    'use strict';
+
+    $.fn.kanye = function(opts) {
         var self = this;
 
+        /**
+        * Filters text for profanity
+        * @param {String} text Text to filter
+        * @returns {String}
+        */
+        function filter(text) {
+            let regex = /shit|fuck|bitch|/ig;
+            let new_text = text.replace(regex, (s) => {
+                let i = 0;
+                let stars = '';
+
+                while (i < s.length) {
+                    stars += '*';
+                    i++;
+                }
+
+                return stars;
+            });
+
+            return new_text;
+        }
+
+        /**
+        * Generates random number with a max value of n
+        * @param {number} n Max value
+        * @returns {Number}
+        */
+        function rand(n) {
+            return Math.floor(Math.random() * n);
+        }
+
+        /**
+        * Metadata
+        */
+        self.version = '3.0.0';
+
+        /**
+        * Default options
+        */
         self.defaults = {
             angry: false,
             explicit: true,
@@ -49,49 +103,27 @@
             "People ask me a lot about my drive. I think it comes from, like, having a sexual addiction at a really young age. Look at the drive that people have to get sex - to dress like this and get a haircut and be in the club in the freezing cold at 3 A.M., the places they go to pick up a girl. If you can focus the energy into something valuable, put that into work ethic."
         ];
 
-        $(this).each(function() {
-            var preKanyeText = $(this);
-            var opts = $.extend({}, self.defaults, options);
-            var kanyeText = '';
+        /**
+        * Replaces selected text with quotes
+        */
+        $(this).each(() => {
+            let current = $(this);
+            let options = $.extend({}, self.defaults, opts);
+            let result = '';
 
-            for (var i = 1; i < opts.paragraphs; i++) {
-                kanyeText += self.quotes[rand(self.quotes.length)] + '<br><br>';
+            for (let i = 1; i < options.paragraphs; i++) {
+                result += self.quotes[rand(self.quotes.length)] + '<br><br>';
             }
 
-            kanyeText += self.quotes[rand(self.quotes.length)];
-            kanyeText = opts.explicit === false ? filter(kanyeText) : kanyeText;
-            kanyeText = opts.angry === true ? kanyeText.toUpperCase() : kanyeText;
+            result += self.quotes[rand(self.quotes.length)];
+            result = options.explicit === false ? filter(result) : result;
+            result = options.angry === true ? result.toUpperCase() : result;
 
-            preKanyeText.addClass('kanye-ipsum');
-            preKanyeText.text(kanyeText);
-            preKanyeText.html(preKanyeText.text());
+            current.addClass('kanye-ipsum');
+            current.text(result);
+            current.html(current.text());
+
             return this;
         });
     };
-
-    function filter(text) {
-        var regex = /shit|fuck|bitch|/ig;
-        var new_text = text.replace(regex, function(s) {
-            var i = 0;
-            var stars = '';
-            while (i < s.length) {
-                stars += '*';
-                i++;
-            }
-            return stars;
-        });
-        return new_text;
-    }
-
-    function rand(n) {
-        return Math.floor(Math.random() * n);
-    }
-
-    console.log(" __  ___      ___      .__   __. ____    ____  _______     __  .______     _______. __    __  .___  ___.");
-    console.log("|  |/  /     /   \\     |  \\ |  | \\   \\  /   / |   ____|   |  | |   _  \\   /       ||  |  |  | |   \\/   |");
-    console.log("|  '  /     /  ^  \\    |   \\|  |  \\   \\/   /  |  |__      |  | |  |_)  | |   (----`|  |  |  | |  \\  /  |");
-    console.log("|    <     /  /_\\  \\   |  . `  |   \\_    _/   |   __|     |  | |   ___/   \\   \\    |  |  |  | |  |\\/|  |");
-    console.log("|  .  \\   /  _____  \\  |  |\\   |     |  |     |  |____    |  | |  |   .----)   |   |  `--'  | |  |  |  |");
-    console.log("|__|\\__\\ /__/     \\__\\ |__| \\__|     |__|     |_______|   |__| | _|   |_______/     \\______/  |__|  |__|");
-    console.log('%cBrought to you by Ty-Lucas Kelley', 'color: #6f096f');
-}(jQuery));
+})(jQuery);

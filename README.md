@@ -8,8 +8,9 @@
 
 ---
 
-### What's new?
+### Latest Changes
 
+* Cleaned up, switched to ES6 & Gulp, published on Bower & NPM, more quotes (3/6/2016)
 * Published on jQuery Registry, NPM, and Bower (5/23/2015)
 * Cleaned up and stripped project down to the essentials (5/23/2015)
 * Minify every time server is started (9/13/2014)
@@ -26,11 +27,22 @@ I know people get mad at me when I compare myself, but that's the only way I can
 ### Installation
 
 Simply install `kanye-ipsum` with npm or bower. Or, grab the minified file from
-the `dist` folder. All you need is jQuery (1.5+) to use it.
+the `dist` folder. All you need is jQuery to use it. Running `npm install` or
+`bower install` will grab jQuery for you if needed.
+
+### Testing
+
+To run the test suite, you need Gulp installed:
+
+```sh
+$ npm install && npm install -g gulp
+```
+
+Tests can be run with the `gulp test` command.
 
 ### Usage
 
-Include jQuery and the `jquery.kanye-ipsum.min.js` file in your HTML and you'll be ready to go. Usage is pretty simple:
+Include jQuery and the `dist/jquery.kanye-ipsum.min.js` file in your HTML and you'll be ready to go. Usage is pretty simple:
 
         <p id="i-wish-i-was-kanye">
             i lernd to kode at w3 skools
@@ -52,7 +64,7 @@ Let's add some of me to that `<p>` tag:
 
 > I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at. So when you get something that has the name Kanye West on it, it’s supposed to be pushing the furthest possibilities. I will be the leader of a company that ends up being worth billions of dollars, because I got the answers. I understand culture. I am the nucleus.
 
-Note that if you call `.kanye()` on an object like `$('p')`, it will generate new placeholder text for every single `p` tag on your page.
+Note that if you call `.kanye()` on a DOM node like `$('p')`, it will generate new placeholder text for every single `p` tag on your page.
 
 ### Customization
 

@@ -1,0 +1,14 @@
+{
+    "node": true,
+    "browser": true,
+    "curly": true,
+    "eqeqeq": true,
+    "unused": true,
+    "undef": true,
+    "expr": true,
+    "esnext": true,
+    "strict": true,
+    "predef": [
+        "jQuery"
+    ]
+}
