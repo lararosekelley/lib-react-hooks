@@ -5,7 +5,6 @@ import del from 'del';
 import gulp from 'gulp';
 import install from 'gulp-install';
 import jshint from 'gulp-jshint';
-import mocha from 'gulp-mocha';
 import plumber from 'gulp-plumber';
 import rename from 'gulp-rename';
 import replace from 'gulp-replace';
@@ -18,17 +17,9 @@ import uglify from 'gulp-uglify';
 */
 
 const paths = {
-    dist: 'dist',
-    tmp: 'tmp/*.js',
-    pkgs: ['./bower.json', './package.json'],
-    js: {
-        src: 'jquery.kanye-ipsum.js',
-        dist: 'dist'
-    },
-    test: {
-        src: 'test/*.js',
-        dist: 'dist/test'
-    }
+    dist: './dist',
+    pkgs: [ './bower.json', './package.json' ],
+    js: './jquery.kanye-ipsum.js'
 };
 
 /**
@@ -37,10 +28,6 @@ const paths = {
 
 gulp.task('clean', () => {
     return del(paths.dist);
-});
-
-gulp.task('clean:tmp', () => {
-    return del(paths.tmp);
 });
 
 /**
@@ -58,32 +45,20 @@ gulp.task('install', () => {
 */
 
 gulp.task('jshint', () => {
-    return gulp.src(paths.js.src.concat(paths.test.src))
+    return gulp.src(paths.js)
         .pipe(plumber())
         .pipe(jshint())
         .pipe(jshint.reporter('unix'));
 });
 
 /**
-* run tests
+* compile & minify code, add timestamp to build output
 */
 
-gulp.task('test', ['compile:src', 'compile:test'], () => {
-    return gulp.src(paths.test.dist)
-        .pipe(plumber())
-        .pipe(mocha({
-            reporter: 'dot',
-            timeout: 5000,
-            ui: 'bdd'
-        }));
-});
+gulp.task('compile', () => {
+    const now = new Date().toUTCString();
 
-/**
-* compile & minify code
-*/
-
-gulp.task('compile:src', () => {
-    return gulp.src(paths.tmp)
+    return gulp.src(paths.js)
         .pipe(plumber())
         .pipe(sourcemaps.init())
         .pipe(babel({ presets: ['es2015'] }))
@@ -93,31 +68,8 @@ gulp.task('compile:src', () => {
         .pipe(sourcemaps.write())
         .pipe(plumber.stop())
         .pipe(rename('jquery.kanye-ipsum.min.js'))
-        .pipe(gulp.dest(paths.js.dist));
-});
-
-gulp.task('compile:test', () => {
-    return gulp.src(paths.test.src)
-        .pipe(plumber())
-        .pipe(sourcemaps.init())
-        .pipe(babel({ presets: ['es2015'] }))
-        .pipe(uglify())
-        .pipe(sourcemaps.write())
-        .pipe(plumber.stop())
-        .pipe(gulp.dest(paths.test.dist));
-});
-
-/**
-* Add build timestamp
-*/
-
-gulp.task('timestamp', () => {
-    const now = new Date().toUTCString();
-
-    return gulp.src(paths.js.src)
-        .pipe(plumber())
         .pipe(replace('{timestamp}', now))
-        .pipe(gulp.dest(paths.tmp));
+        .pipe(gulp.dest(paths.dist));
 });
 
 /**
@@ -125,11 +77,11 @@ gulp.task('timestamp', () => {
 */
 
 gulp.task('build', (cb) => {
-    seq('clean', 'install', 'jshint', 'timestamp', 'compile:src', 'compile:test', 'clean:tmp', cb);
+    seq('clean', 'install', 'jshint', 'compile', cb);
 });
 
 gulp.task('watch', () => {
-    gulp.watch(paths.js.src.concat(paths.test.src), ['jshint', 'timestamp', 'compile:src', 'compile:test', 'clean:tmp']);
+    gulp.watch(paths.js, ['jshint', 'compile']);
 });
 
 gulp.task('default', ['build', 'watch']);

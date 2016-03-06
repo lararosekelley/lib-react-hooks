@@ -27,18 +27,7 @@ I know people get mad at me when I compare myself, but that's the only way I can
 ### Installation
 
 Simply install `kanye-ipsum` with npm or bower. Or, grab the minified file from
-the `dist` folder. All you need is jQuery to use it. Running `npm install` or
-`bower install` will grab jQuery for you if needed.
-
-### Testing
-
-To run the test suite, you need Gulp installed:
-
-```sh
-$ npm install && npm install -g gulp
-```
-
-Tests can be run with the `gulp test` command.
+the `dist` folder. All you need is jQuery to use it.
 
 ### Usage
 

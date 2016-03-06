@@ -15,15 +15,15 @@
     'use strict';
 
     $.fn.kanye = function(opts) {
-        var self = this;
+        let self = $.fn.kanye;
 
         /**
         * Filters text for profanity
         * @param {String} text Text to filter
         * @returns {String}
         */
-        function filter(text) {
-            let regex = /shit|fuck|bitch|/ig;
+        self.filter = function(text) {
+            let regex = /shit|fuck|bitch|nigga|nigger|damn/ig;
             let new_text = text.replace(regex, (s) => {
                 let i = 0;
                 let stars = '';
@@ -37,21 +37,16 @@
             });
 
             return new_text;
-        }
+        };
 
         /**
         * Generates random number with a max value of n
         * @param {number} n Max value
         * @returns {Number}
         */
-        function rand(n) {
+        self.rand = function(n) {
             return Math.floor(Math.random() * n);
-        }
-
-        /**
-        * Metadata
-        */
-        self.version = '3.0.0';
+        };
 
         /**
         * Default options
@@ -63,6 +58,7 @@
         };
 
         self.quotes = [
+            "I’m standing up and I'm telling you, I am Warhol. I am the number one most impactful artist of our generation. I am Shakespeare, in the flesh. Walt Disney, Nike, Google... Now who's going to be the Medici Family and stand up and let me create more? Or do you want to marginalize me until I’m out of my moment?",
             "You ain't been doing the education, Sway.",
             "The other side is so, so, so, so strong in trying to beat down, and demonize and dishumanize – and I don’t know if that’s a word or not, and if it’s not a word, then I said it’s a fucking word.",
             "Put this in the magazine: There's nothing more to be said about music. I'm the fucking end-all, be-all of music.",
@@ -100,7 +96,13 @@
             "One of the problems with being a bubbling source of creativity - it's like I'm bubbling in a laboratory, and if you don't put a cap on it, at one point it will, like, break the glass. If I can hone that... then I have, like, nuclear power, like a superhero, like Cyclops when he puts his glasses on.",
             "You should only believe about 90 percent of what I say. As a matter of fact, don’t even believe anything that I’m saying at all. I could be completely fucking with you, and the world, the entire time.",
             "I'm a pop enigma. I live and breathe every element in life. I rock a bespoke suit and I go to Harold's for fried chicken. It's all these things at once, because, as a taste maker, I find the best of everything.",
-            "People ask me a lot about my drive. I think it comes from, like, having a sexual addiction at a really young age. Look at the drive that people have to get sex - to dress like this and get a haircut and be in the club in the freezing cold at 3 A.M., the places they go to pick up a girl. If you can focus the energy into something valuable, put that into work ethic."
+            "People ask me a lot about my drive. I think it comes from, like, having a sexual addiction at a really young age. Look at the drive that people have to get sex - to dress like this and get a haircut and be in the club in the freezing cold at 3 A.M., the places they go to pick up a girl. If you can focus the energy into something valuable, put that into work ethic.",
+            "When you're the absolute best, you get hated on the most.",
+            "Sometimes people write novels and they just be so wordy and so self-absorbed. I am not a fan of books. I would never want a book's autograph. I am a proud non-reader of books.",
+            "I hate when I'm on a flight and I wake up with a water bottle next to me like oh great now I gotta be responsible for this water bottle.",
+            "Will Ferrell has reached walking living breathing God status!",
+            "There are some lame fake accounts trying to make Kanye-isms that are not Mark Twain level.",
+            "I'm not even going to lie to you. I love me so much right now."
         ];
 
         /**
@@ -112,11 +114,11 @@
             let result = '';
 
             for (let i = 1; i < options.paragraphs; i++) {
-                result += self.quotes[rand(self.quotes.length)] + '<br><br>';
+                result += self.quotes[self.rand(self.quotes.length)] + '<br><br>';
             }
 
-            result += self.quotes[rand(self.quotes.length)];
-            result = options.explicit === false ? filter(result) : result;
+            result += self.quotes[self.rand(self.quotes.length)];
+            result = options.explicit === false ? self.filter(result) : result;
             result = options.angry === true ? result.toUpperCase() : result;
 
             current.addClass('kanye-ipsum');
