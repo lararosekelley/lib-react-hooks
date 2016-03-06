@@ -1,5 +1,7 @@
 # Kanye Ipsum v3.0.1
 
+[![Build Status](https://travis-ci.org/tylucaskelley/kanye-ipsum.svg?branch=master)](https://travis-ci.org/tylucaskelley/kanye-ipsum)
+
 **A jQuery plugin for adding some confidence to your placeholder text**
 
 > "Put this in the magazine: There's nothing more to be said about placeholder text. I'm the end-all, be-all of placeholder text." - Adapted from *[Details, 2009](http://www.details.com/culture-trends/cover-stars/200902/hip-hop-artist-kanye-west-talks-fashion-and-music)*
