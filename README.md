@@ -1,4 +1,4 @@
-# Kanye Ipsum
+# Kanye Ipsum v3.0.1
 
 **A jQuery plugin for adding some confidence to your placeholder text**
 

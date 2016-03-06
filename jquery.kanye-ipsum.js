@@ -1,5 +1,5 @@
 /*!
-* Kanye Ipsum v3.0.0
+* Kanye Ipsum v3.0.1
 * https://github.com/tylucaskelley
 *
 * Includes jQuery

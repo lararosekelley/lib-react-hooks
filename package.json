@@ -1,6 +1,6 @@
 {
   "name": "kanye-ipsum",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "author": "Ty-Lucas Kelley <tylucaskelley@gmail.com>",
   "description": "A jQuery plugin for generating Kanye West-inspired placeholder text.",
   "license": "MIT",
