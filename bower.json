@@ -1,14 +1,27 @@
 {
-    "name": "kanye-ipsum",
-    "version": "2.0.0",
-    "main": "dist/jquery.kanye-ipsum.min.js",
-    "ignore": [
-        ".gitignore",
-        "kanye-ipsum.jquery.json",
-        "package.json",
-        "TODO.md"
-    ],
-    "dependencies": {
-        "jquery": ">=1.5.0"
-    }
+  "name": "kanye-ipsum",
+  "description": "A jQuery plugin for generating Kanye West-inspired placeholder text.",
+  "keywords": [
+    "jquery-plugin",
+    "ecosystem:jquery",
+    "kanye-west",
+    "lorem-ipsum",
+    "placeholder"
+  ],
+  "version": "3.0.0",
+  "authors": [
+    "Ty-Lucas Kelley <tylucaskelley@gmail.com>"
+  ],
+  "license": "MIT",
+  "main": "dist/jquery.kanye-ipsum.min.js",
+  "ignore": [
+    "**/.*",
+    "package.json",
+    "node_modules",
+    "bower_components",
+    "test"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.1"
+  }
 }

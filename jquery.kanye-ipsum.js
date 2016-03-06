@@ -1,7 +1,56 @@
-(function($) {
-    $.fn.kanye = function(options) {
-        var self = this;
+/*!
+* Kanye Ipsum v3.0.0
+* https://github.com/tylucaskelley
+*
+* Includes jQuery
+* http://jquery.com/
+*
+* Copyright (c) 2015-2016 Ty-Lucas Kelley and other contributors
+* Released under the MIT license
+* https://raw.githubusercontent.com/tylucaskelley/kanye-ipsum/master/LICENSE
+*
+* Date: {timestamp}
+*/
+(($) => {
+    'use strict';
 
+    $.fn.kanye = function(opts) {
+        let self = $.fn.kanye;
+
+        /**
+        * Filters text for profanity
+        * @param {String} text Text to filter
+        * @returns {String}
+        */
+        self.filter = function(text) {
+            let regex = /shit|fuck|bitch|nigga|nigger|damn/ig;
+            let new_text = text.replace(regex, (s) => {
+                let i = 0;
+                let stars = '';
+
+                while (i < s.length) {
+                    stars += '*';
+                    i++;
+                }
+
+                return stars;
+            });
+
+            return new_text;
+        };
+
+        /**
+        * Generates random number with a max value of n
+        * @param {number} n Max value
+        * @returns {Number}
+        */
+        self.rand = function(n) {
+            return Math.floor(Math.random() * n);
+        };
+
+        /**
+        * Default options
+        */
         self.defaults = {
             angry: false,
             explicit: true,
@@ -9,6 +58,7 @@
         };
 
         self.quotes = [
+            "I’m standing up and I'm telling you, I am Warhol. I am the number one most impactful artist of our generation. I am Shakespeare, in the flesh. Walt Disney, Nike, Google... Now who's going to be the Medici Family and stand up and let me create more? Or do you want to marginalize me until I’m out of my moment?",
             "You ain't been doing the education, Sway.",
             "The other side is so, so, so, so strong in trying to beat down, and demonize and dishumanize – and I don’t know if that’s a word or not, and if it’s not a word, then I said it’s a fucking word.",
             "Put this in the magazine: There's nothing more to be said about music. I'm the fucking end-all, be-all of music.",
@@ -46,52 +96,36 @@
             "One of the problems with being a bubbling source of creativity - it's like I'm bubbling in a laboratory, and if you don't put a cap on it, at one point it will, like, break the glass. If I can hone that... then I have, like, nuclear power, like a superhero, like Cyclops when he puts his glasses on.",
             "You should only believe about 90 percent of what I say. As a matter of fact, don’t even believe anything that I’m saying at all. I could be completely fucking with you, and the world, the entire time.",
             "I'm a pop enigma. I live and breathe every element in life. I rock a bespoke suit and I go to Harold's for fried chicken. It's all these things at once, because, as a taste maker, I find the best of everything.",
-            "People ask me a lot about my drive. I think it comes from, like, having a sexual addiction at a really young age. Look at the drive that people have to get sex - to dress like this and get a haircut and be in the club in the freezing cold at 3 A.M., the places they go to pick up a girl. If you can focus the energy into something valuable, put that into work ethic."
+            "People ask me a lot about my drive. I think it comes from, like, having a sexual addiction at a really young age. Look at the drive that people have to get sex - to dress like this and get a haircut and be in the club in the freezing cold at 3 A.M., the places they go to pick up a girl. If you can focus the energy into something valuable, put that into work ethic.",
+            "When you're the absolute best, you get hated on the most.",
+            "Sometimes people write novels and they just be so wordy and so self-absorbed. I am not a fan of books. I would never want a book's autograph. I am a proud non-reader of books.",
+            "I hate when I'm on a flight and I wake up with a water bottle next to me like oh great now I gotta be responsible for this water bottle.",
+            "Will Ferrell has reached walking living breathing God status!",
+            "There are some lame fake accounts trying to make Kanye-isms that are not Mark Twain level.",
+            "I'm not even going to lie to you. I love me so much right now."
         ];
 
-        $(this).each(function() {
-            var preKanyeText = $(this);
-            var opts = $.extend({}, self.defaults, options);
-            var kanyeText = '';
+        /**
+        * Replaces selected text with quotes
+        */
+        $(this).each(() => {
+            let current = $(this);
+            let options = $.extend({}, self.defaults, opts);
+            let result = '';
 
-            for (var i = 1; i < opts.paragraphs; i++) {
-                kanyeText += self.quotes[rand(self.quotes.length)] + '<br><br>';
+            for (let i = 1; i < options.paragraphs; i++) {
+                result += self.quotes[self.rand(self.quotes.length)] + '<br><br>';
             }
 
-            kanyeText += self.quotes[rand(self.quotes.length)];
-            kanyeText = opts.explicit === false ? filter(kanyeText) : kanyeText;
-            kanyeText = opts.angry === true ? kanyeText.toUpperCase() : kanyeText;
+            result += self.quotes[self.rand(self.quotes.length)];
+            result = options.explicit === false ? self.filter(result) : result;
+            result = options.angry === true ? result.toUpperCase() : result;
 
-            preKanyeText.addClass('kanye-ipsum');
-            preKanyeText.text(kanyeText);
-            preKanyeText.html(preKanyeText.text());
+            current.addClass('kanye-ipsum');
+            current.text(result);
+            current.html(current.text());
+
             return this;
         });
     };
-
-    function filter(text) {
-        var regex = /shit|fuck|bitch|/ig;
-        var new_text = text.replace(regex, function(s) {
-            var i = 0;
-            var stars = '';
-            while (i < s.length) {
-                stars += '*';
-                i++;
-            }
-            return stars;
-        });
-        return new_text;
-    }
-
-    function rand(n) {
-        return Math.floor(Math.random() * n);
-    }
-
-    console.log(" __  ___      ___      .__   __. ____    ____  _______     __  .______     _______. __    __  .___  ___.");
-    console.log("|  |/  /     /   \\     |  \\ |  | \\   \\  /   / |   ____|   |  | |   _  \\   /       ||  |  |  | |   \\/   |");
-    console.log("|  '  /     /  ^  \\    |   \\|  |  \\   \\/   /  |  |__      |  | |  |_)  | |   (----`|  |  |  | |  \\  /  |");
-    console.log("|    <     /  /_\\  \\   |  . `  |   \\_    _/   |   __|     |  | |   ___/   \\   \\    |  |  |  | |  |\\/|  |");
-    console.log("|  .  \\   /  _____  \\  |  |\\   |     |  |     |  |____    |  | |  |   .----)   |   |  `--'  | |  |  |  |");
-    console.log("|__|\\__\\ /__/     \\__\\ |__| \\__|     |__|     |_______|   |__| | _|   |_______/     \\______/  |__|  |__|");
-    console.log('%cBrought to you by Ty-Lucas Kelley', 'color: #6f096f');
-}(jQuery));
+})(jQuery);
