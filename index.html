@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Kanye-Ipsum Generator</title>
+
+	<script type="text/javascript" src="./lib/jquery.min.js"></script>
+	<script type="text/javascript" src="./lib/jquery.kanye-ipsum.min.js"></script>
+
+	<style type="text/css">
+		.wrapper{
+			margin-top: 1em;
+			padding: 3em;
+			font-size: 1.3em;
+			letter-spacing: 1px;
+		}
+
+
+		.inp input{
+			margin: 1em;
+			height: 30px;
+		}
+		.inp .angry,.inp .explicit{
+			margin: 1em;
+			width: 20px;
+			height: 20px;
+		}
+		.inp label{
+			font-size: 2em;
+		}
+	</style>
+
+</head>
+
+<body>
+
+
+	<center class="inp">
+		<input type="checkbox" class="angry"></input><label>Angry</label>
+		<input type="checkbox" class="explicit"></input><label>Explicit</label>
+		<input type="text" class="para" placeholder="# of para" size="5"></input>
+		<input type="submit" onclick="generate()" value="Yo!"></inpu5>
+	</center>
+
+	<div class="wrapper">
+		<div class="ipsum"></div>
+	</div>
+
+
+
+
+
+	<script type="text/javascript">
+
+		// Add Feature:
+		// + generate ipsum using fixed words instead of paragraphs
+
+
+		function generate(){
+
+			// default values
+			var angry=true;
+			var explicit=false;
+			var para=3;
+
+			// from user input
+			angry=$('.angry').prop('checked');
+			explicit=$('.explicit').prop('checked');
+			para=parseInt( $('.para').val() );
+
+			if(isNaN(para)) para=3;
+
+			$('.ipsum').kanye({
+			    angry: angry,
+			    explicit: explicit,
+			    paragraphs: para
+			});
+		};
+		
+	</script>
+
+</body>
+</html>
