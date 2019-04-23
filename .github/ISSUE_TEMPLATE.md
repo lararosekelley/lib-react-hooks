@@ -1,33 +1,36 @@
 # Submit a feature request or bug report
 
-Replace any "X" with your information.
+Before you submit an issue, check to see if it has [already been reported][1].
+Any questions should be directed to @tylucaskelley.
 
 ---
 
-### Is this a request for a feature or a bug report?
+Replace any "X" below with your information.
+
+## Development environment
+
+- Operating system: X
+- Browser: X
+- Software version: X
+
+## Current behavior
+
+Include screenshots if possible.
 
 X
 
-### What is the current behavior?
+## Expected behavior
 
 X
 
-### If this is a bug report, please provide steps to reproduce:
+## Steps to reproduce
+
+Only fill this in if you are filing a bug report.
+
+1. X
+
+## Other relevant information
 
 X
 
-### What is the expected or desired behavior?
-
-X
-
-### Please provide use cases for changing the current behavior:
-
-X
-
-### Please describe your development environment (OS, browser, etc.):
-
-X
-
-### Other relevant information:
-
-X
+[1]: https://github.com/tylucaskelley/react-recipe-card/issues

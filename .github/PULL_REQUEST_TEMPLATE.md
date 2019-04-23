@@ -1,30 +1,45 @@
 # Submit a pull request
 
-Replace any "X" with your information. Please check the boxes below to confirm
-that your pull request meets the requirements:
+Thank you for submitting a pull request! To speed up the review process, please ensure that everything below
+is true:
 
-- [ ] This pull request isn't a duplicate of an [existing one][1]
-- [ ] Commit messages are detailed
-- [ ] The code style guidelines have been followed
-- [ ] Documentation has been updated to reflect changes
-- [ ] Tests have been added / updated to reflect changes
+1. This is not a duplicate of an [existing pull request][1].
+2. No existing features have been broken without good reason.
+3. Your commit messages are detailed.
+4. The code style [guidelines][2] have been followed.
+5. Documentation has been updated to reflect your changes.
+6. Tests have been added or updated to reflect your changes.
+7. All tests have passed.
+
+Any questions should be directed to @tylucaskelley.
 
 ---
 
-### What changes does this pull request make?
+Replace any "X" below with information about your pull request.
+
+## Pull request details
+
+Provide details about your pull request and what it adds, fixes, or changes.
 
 X
 
-### What is the current behavior?
+## Breaking changes
+
+Describe what features are broken by this pull request and why, if any.
 
 X
 
-### Does this pull request introduce any breaking changes?
+## Issues fixed
+
+Enter the issue numbers resolved by this pull request below, if any.
+
+1. X
+
+## Other relevant information
+
+Provide any other important details below.
 
 X
 
-### Other information:
-
-X
-
-[1]: https://github.com/tylucaskelley/kanye-ipsum/pulls
+[1]: https://github.com/tylucaskelley/react-recipe-card/pulls
+[2]: https://github.com/tylucaskelley/react-recipe-card/blob/master/.github/CONTRIBUTING.md#code-style
