@@ -1,4 +1,4 @@
-# lib-react-hooks
+# React Hooks Library
 
 > General purpose React hooks library
 
@@ -50,7 +50,7 @@ const Component = () => {
 
 ## Available hooks
 
-See the [documentation site](https://lib-react-hooks.tlk.codes) for more.
+See the [documentation site](https://react-hooks-library.tlk.codes) for more.
 
 ## License
 
