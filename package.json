@@ -26,12 +26,15 @@
   "scripts": {
     "clean": "rm -rf dist node_modules yarn.lock",
     "postclean": "yarn install",
+    "prebuild": "rm -rf dist",
     "build": "rollup --config",
+    "postbuild": "yarn docs:build",
     "lint": "eslint --ignore-path .gitignore --ext .js,.jsx,.ts,.tsx src",
     "test": "jest",
     "test:coverage": "jest --coverage && cat coverage/lcov.info | coveralls",
     "docs:serve": "docz dev",
-    "docs:build": "docz build"
+    "docs:build": "docz build",
+    "prepublishOnly": "yarn test && yarn build"
   },
   "husky": {
     "hooks": {
@@ -41,7 +44,8 @@
   },
   "jest": {
     "preset": "ts-jest",
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "testPathIgnorePatterns": [ "/node_modules/", "/.docz/" ]
   },
   "dependencies": {
     "react": "^16.9.0",

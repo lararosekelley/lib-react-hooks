@@ -6,6 +6,7 @@
 
 [![npm version](https://badge.fury.io/js/lib-react-hooks.svg)](https://badge.fury.io/js/lib-react-hooks)
 [![build status](https://travis-ci.org/tylucaskelley/lib-react-hooks.svg?branch=master)](https://travis-ci.org/tylucaskelley/lib-react-hooks)
+[![coverage status](https://coveralls.io/repos/github/tylucaskelley/lib-react-hooks/badge.svg?branch=master)](https://coveralls.io/github/tylucaskelley/lib-react-hooks?branch=master)
 
 ## Installation
 
