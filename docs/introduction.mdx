@@ -1,0 +1,112 @@
+---
+name: Introduction
+route: /
+menu: General
+---
+
+# Introduction
+
+This library provides a set of general-purpose [hooks](https://reactjs.org/docs/hooks-intro.html) for use in
+your React components.
+
+## Why use hooks?
+
+Hooks were introduced in React 16.8, and allow developers to utilize state and other features without needing
+to create class components. As an example, this code:
+
+```js
+import React, { Component } from 'react';
+import { Form, Field, Input } from 'some-ui-library';
+
+class NewUserForm extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      name: 'John Doe',
+      email: 'john.doe@example.com',
+      age: 25,
+    };
+
+    this.handleNameChange = this.handleNameChange.bind(this);
+    this.handleEmailChange = this.handleNameChange.bind(this);
+    this.handleAgeChange = this.handleAgeChange.bind(this);
+  }
+
+  handleNameChange(e) {
+    this.setState({ name: e.target.value });
+  }
+
+  handleEmailChange(e) {
+    this.setState({ email: e.target.value });
+  }
+
+  handleAgeChange(e) {
+    this.setState({ age: e.target.value });
+  }
+
+  render() {
+    const { name, email, age } = this.state;
+
+    return (
+      <Form>
+        <Field label="Name">
+          <Input value={name} onChange={this.handleNameChange} />
+        </Field>
+        <Field label="Email">
+          <Input value={email} onChange={this.handleEmailChange} />
+        </Field>
+        <Field label="Age">
+          <Input value={age} onChange={this.handleAgeChange} />
+        </Field>
+      </Form>
+    );
+  }
+}
+```
+
+could become this:
+
+```js
+import React, { useState } from 'react';
+import { Form, Field, Input } from 'some-ui-library';
+
+const useInput = (initialValue) => {
+  const [ value, setValue ] = useState(initialValue);
+
+  const handleChange = (e) => {
+    setValue(e.target.value);
+  };
+
+  return {
+    value,
+    onChange: handleChange,
+  };
+};
+
+const NewUserForm = () => {
+  const name = useInput('John Doe');
+  const email = useInput('john.doe@example.com');
+  const age = useInput(25);
+
+  return (
+    <Form>
+      <Field label="Name">
+        <Input {...name} />
+      </Field>
+      <Field label="Email">
+        <Input {...email} />
+      </Field>
+      <Field label="Age">
+        <Input {...age} />
+      </Field>
+    </Form>
+  );
+}
+
+export default NewUserForm;
+```
+
+Being able to rip out a lot of the logic and let the component focus on presentation reduces boilerplate, makes the
+code more readable, and provides many other benefits. For a detailed explanation of the benefits of using hooks,
+[watch these great presentations by Dan Abramov and others from React Conf 2018](https://www.youtube.com/watch?v=dpw9EHDh2bM).

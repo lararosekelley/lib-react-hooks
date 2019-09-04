@@ -33,4 +33,4 @@ Only fill this in if you are filing a bug report.
 
 X
 
-[1]: https://github.com/tylucaskelley/react-recipe-card/issues
+[1]: https://github.com/tylucaskelley/lib-react-hooks/issues

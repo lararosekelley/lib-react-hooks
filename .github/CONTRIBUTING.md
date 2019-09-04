@@ -57,9 +57,9 @@ to ensure you aren't duplicating anyone's work. Then, do the following:
 
 Please follow the coding style conventions detailed below:
 
-- Just make sure `yarn lint` passes
+- Just ensure that `yarn lint` always passes!
 
 [1]: mailto:tylucaskelley@gmail.com
-[2]: https://github.com/tylucaskelley/react-recipe-card/issues/new
-[3]: https://github.com/tylucaskelley/react-recipe-card/compare
-[4]: https://github.com/tylucaskelley/react-recipe-card/pulls
+[2]: https://github.com/tylucaskelley/lib-react-hooks/issues/new
+[3]: https://github.com/tylucaskelley/lib-react-hooks/compare
+[4]: https://github.com/tylucaskelley/lib-react-hooks/pulls

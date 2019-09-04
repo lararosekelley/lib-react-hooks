@@ -1,0 +1,51 @@
+---
+name: useAsync
+route: use-async
+menu: Hooks
+---
+
+# useAsync
+
+The `useAsync` hook is used to call an asynchronous function within a component.
+
+## Usage
+
+```js
+import { useAsync } from 'lib-react-hooks';
+```
+
+```js
+const Component = () => {
+  const request = useAsync(async () => {
+    const response = await fetch('https://api.example.com/users/123');
+    return response.json();
+  });
+
+  return (
+    <div>
+      {request.complete ? (
+        <p>{`Name: ${request.data.name}`}</p>
+      ) : (
+        <p>Loading...</p>
+      )}
+    </div>
+  );
+};
+```
+
+## Arguments
+
+| Prop    | Type       | Optional | Default | Description                       |
+| ------- | ---------- | -------- | ------- | --------------------------------- |
+| fn      | `function` | no       |         | Async function to call.           |
+| context | `object`   | yes      |         | Optional context to bind `fn` to. |
+
+## Return value
+
+Returns an object with the following keys:
+
+| Key      | Type      | Description                                               |
+| -------- | --------- | --------------------------------------------------------- |
+| data     | `any`     | Data returned from the provided function.                 |
+| complete | `boolean` | Whether or not promise has resolved.                      |
+| error    | `boolean` | Whether or not an error occured in the provided function. |

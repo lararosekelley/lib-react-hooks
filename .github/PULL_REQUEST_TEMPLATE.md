@@ -41,5 +41,5 @@ Provide any other important details below.
 
 X
 
-[1]: https://github.com/tylucaskelley/react-recipe-card/pulls
-[2]: https://github.com/tylucaskelley/react-recipe-card/blob/master/.github/CONTRIBUTING.md#code-style
+[1]: https://github.com/tylucaskelley/lib-react-hooks/pulls
+[2]: https://github.com/tylucaskelley/lib-react-hooks/blob/master/.github/CONTRIBUTING.md#code-style

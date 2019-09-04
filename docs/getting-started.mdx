@@ -1,0 +1,47 @@
+---
+name: Getting started
+route: getting-started
+menu: General
+---
+
+# Getting started
+
+## Installation
+
+Install with `yarn`:
+
+```bash
+$ yarn add lib-react-hooks
+```
+
+Or, `npm` if you prefer:
+
+```bash
+$ npm install --save lib-react-hooks
+```
+
+## Usage
+
+Simply import any hooks you want to use in your React component. Example using `useAsync`:
+
+```js
+import React from 'react';
+import { useAsync } from 'lib-react-hooks';
+
+const Component = () => {
+  const request = useAsync(async () => {
+    const response = await fetch('https://api.example.com/users/123');
+    return response.json();
+  });
+
+  return (
+    <div>
+      {request.complete ? (
+        <p>{`Name: ${request.data.name}`}</p>
+      ) : (
+        <p>Loading...</p>
+      )}
+    </div>
+  );
+};
+```
